@@ -41,11 +41,21 @@ class Question {
 
     this.input1.position(150, 230);
     this.input2.position(350, 230);
+    this.input2.size(300);
+
+    this.input1.mouseClicked(()=>{
+      this.input1.value('');
+    });
+
+    this.input2.mouseClicked(()=>{
+      this.input2.value('');
+    });
+    
     this.button.position(290, 300);
 
     this.button.mousePressed(()=>{
       
-       this.message.html("Obrigado, Sua Resposta Foi Enviada");
+       this.message.html("Obrigado " + this.input1.value() + ", Sua Resposta Foi:  " + this.input2.value());
        this.message.position(350, 350);
     });
   }
